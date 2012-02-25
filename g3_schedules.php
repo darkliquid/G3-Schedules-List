@@ -82,7 +82,7 @@ function g3_schedules_meta_callback($post) {
 	echo '<p><label for="g3_schedules_image">Schedule Image <small>(Please upload image that are 475x105)</small></label><br/>';
 	$img_id = get_post_meta($post->ID, 'g3_schedules_image_id', true);
 	if(is_numeric($img_id)) {
-		$img = wp_get_attachment_image_src($img_id, 'schedules-banner');
+		$img = wp_get_attachment_image_src($img_id, 'full');
 		if($img) {
 			echo '<br /><img src="'.$img[0].'" /><input id="g3_schedules_image_delete" name="g3_schedules_image_delete" type="checkbox" /><label for="g3_schedules_image_delete">Don\'t use an image</label><br />';
 		} else {
@@ -138,7 +138,6 @@ function g3_schedules_save_postdata( $post_id ) {
 	if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
 		return $post_id;
 	}
-
   
 	// Check permissions
 	if ( !current_user_can( 'edit_post', $post_id ) ) {
@@ -243,7 +242,8 @@ function g3_schedules() {
 	$query = array(
 		'post_type' => 'schedules',
 		'posts_per_page' => -1,
-		'orderby' => 'menu_order ASC'
+		'orderby' => 'menu_order',
+		'order' => 'ASC'
 	);	
 
 	$schedules = get_posts($query);
