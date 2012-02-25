@@ -242,7 +242,8 @@ add_action('save_post', 'g3_schedules_save_postdata');
 function g3_schedules() {
 	$query = array(
 		'post_type' => 'schedules',
-		'posts_per_page' => -1
+		'posts_per_page' => -1,
+		'orderby' => 'menu_order'
 	);	
 
 	$schedules = get_posts($query);
