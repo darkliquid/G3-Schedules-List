@@ -24,6 +24,7 @@ body .schedule-item {
 .schedule-info {
 	float: right;
 	font-size: 12px;
+	width: 100px;
 }
 
 .schedule-info h6 {
