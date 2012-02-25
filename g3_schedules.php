@@ -243,7 +243,7 @@ function g3_schedules() {
 	$query = array(
 		'post_type' => 'schedules',
 		'posts_per_page' => -1,
-		'orderby' => 'menu_order'
+		'orderby' => 'menu_order ASC'
 	);	
 
 	$schedules = get_posts($query);
@@ -288,7 +288,7 @@ function load_g3_schedules_edit_post_help($help) {
 }
 
 function g3_schedules_shortcode($atts, $content = null) {
-	echo g3_schedules();
+	return g3_schedules();
 }
 add_shortcode('g3_schedules', 'g3_schedules_shortcode');
 
