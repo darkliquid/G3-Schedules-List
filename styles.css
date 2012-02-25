@@ -1,0 +1,33 @@
+body .schedule-list {
+	padding: 0 !important;
+	margin: 0 !important;
+	list-style: none;
+}
+
+body .schedule-item {
+	padding: 5px !important;
+	margin: 0;
+	list-style: none;
+	background: #1A1A1A;
+	color: #fff;
+	font-size: 12px;
+}
+
+.schedule-item.odd {
+	background: #333;
+}
+
+.schedule-image { 
+	float: left;
+}
+
+.schedule-info {
+	float: right;
+	font-size: 12px;
+}
+
+.schedule-info h6 {
+	margin: 0;
+	font-size: 12px;
+}
+	
