@@ -11,7 +11,7 @@
 			<div class="schedule-main">
 			<?php 
 				if(!empty($meta['g3_schedules_image_id'][0])) {
-					$img = wp_get_attachment_image_src($meta['g3_schedules_image_id'][0]); 
+					$img = wp_get_attachment_image_src($meta['g3_schedules_image_id'][0], 'full'); 
 				} else {
 					$img = false;
 				}
